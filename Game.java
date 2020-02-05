@@ -214,9 +214,11 @@ public class Game extends JFrame {
             }
         }
 
-        int option = JOptionPane.showOptionDialog(null,"Hai perso...","Game Over",JOptionPane.DEFAULT_OPTION,JOptionPane.INFORMATION_MESSAGE,null,null,null);
-        if(option == JOptionPane.OK_OPTION){
+        int option = JOptionPane.showOptionDialog(null,"You lost!\nDo you want to play again?","Game Over",JOptionPane.YES_NO_OPTION,JOptionPane.INFORMATION_MESSAGE,null,null,null);
+        if(option == JOptionPane.NO_OPTION){
             System.exit(1);
+        }else{
+            resetGame();
         }
     }
 
@@ -230,9 +232,11 @@ public class Game extends JFrame {
                 }
             }
         }
-        int option = JOptionPane.showOptionDialog(null,"Hai Vinto...","Game Won",JOptionPane.DEFAULT_OPTION,JOptionPane.INFORMATION_MESSAGE,null,null,null);
-        if(option == JOptionPane.OK_OPTION){
+        int option = JOptionPane.showOptionDialog(null,"You won!\nDo you want to play again?","Game Won",JOptionPane.YES_NO_OPTION,JOptionPane.INFORMATION_MESSAGE,null,null,null);
+        if(option == JOptionPane.NO_OPTION){
             System.exit(1);
+        }else{
+            resetGame();
         }
     }
 
