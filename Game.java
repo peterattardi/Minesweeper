@@ -32,7 +32,7 @@ public class Game extends JFrame {
     private Timer timer;
 
     public Game(int rows, int cols, int nBombs) {
-        super("Prato Fiorito");
+        super("Minesweeper");
         this.rows = rows;
         this.cols = cols;
         this.nBombs = nBombs;
@@ -125,7 +125,7 @@ public class Game extends JFrame {
             Random r = new Random();
             int tempI = r.nextInt(rows);
             int tempJ = r.nextInt(cols);
-            while(cells[tempI][tempJ].isBomb() || vectorContainedIn8x8(x,y,tempI,tempJ)){
+            while(cells[tempI][tempJ].isBomb() || vectorContainedIn3x3(x,y,tempI,tempJ)){
                 tempI = r.nextInt(rows);
                 tempJ = r.nextInt(cols);
             }
@@ -133,7 +133,7 @@ public class Game extends JFrame {
         }
     }
 
-    public boolean vectorContainedIn8x8(int x, int y, int randI, int randJ){
+    public boolean vectorContainedIn3x3(int x, int y, int randI, int randJ){
         for(int i = -1; i<=1; i++){
             for(int j= -1; j<=1; j++){
                 if(randI+i == x && randJ+j == y) return true;
