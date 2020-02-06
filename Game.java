@@ -51,7 +51,7 @@ public class Game extends JFrame {
 
         this.timerTask = createTimerTask();
 
-        this.setSize(38*this.rows,38*this.cols);
+        this.setSize(40*this.rows,40*this.cols);
         //this.pack();
         this.setVisible(true);
         this.setResizable(false);
