@@ -223,6 +223,7 @@ public class Game extends JFrame {
     }
 
     public void win(){
+        this.timer.cancel();
         Icon icon = new ImageIcon("win35.png");
         this.setup.setIcon(icon);
         for(int i = 0; i<rows; i++){
